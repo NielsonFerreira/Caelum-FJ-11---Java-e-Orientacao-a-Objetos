@@ -1,25 +1,75 @@
 
 public class Conta {
 
-	String titular;
-	int numero;
-	String agencia;
-	double saldo;
-	Data dataDeAbertura;
+	private String titular;
+	private int numero;
+	private String agencia;
+	private double saldo;
+	private Data dataDeAbertura;
+	private static int identificador;
 
-	void saca(double valor) {
+	public Conta() {
+		Conta.identificador = Conta.identificador + 1;
+	}
+	
+	public Conta(String titular) {
+		this.titular = titular;
+		Conta.identificador = Conta.identificador + 1;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public String getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public Data getDataDeAbertura() {
+		return dataDeAbertura;
+	}
+
+	public void setDataDeAbertura(Data dataDeAbertura) {
+		this.dataDeAbertura = dataDeAbertura;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public static int getIdentificador() {
+		return Conta.identificador;
+	}
+
+	public void saca(double valor) {
 		saldo = saldo - valor;
 	}
 	
-	void deposita(double valor) {
+	public void deposita(double valor) {
 		saldo = saldo + valor;
 	}
 	
-	double calculaRendimento() {
+	public double calculaRendimento() {
 		return saldo * 0.1;
 	}
 	
-	String recuperaDadosParaImpressao() {
+	public String recuperaDadosParaImpressao() {
 		String dados = "Titular: " + this.titular;
 		dados += "\nNúmero: " + this.numero;
 		dados += "\nSaldo: " + this.saldo;
