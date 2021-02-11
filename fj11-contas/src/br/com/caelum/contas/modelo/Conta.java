@@ -1,5 +1,11 @@
 package br.com.caelum.contas.modelo;
 
+/**
+* Classe responsável por moldar as Contas do Banco
+*
+* @author Nielson Francisco Fernandes Ferreira
+*/
+
 public class Conta {
 
 	private String titular;
@@ -61,6 +67,11 @@ public class Conta {
 	public void saca(double valor) {
 		saldo = saldo - valor;
 	}
+	
+	/**
+	* Metodo que incrementa o saldo.
+	* @param valor
+	*/
 	
 	public void deposita(double valor) {
 		saldo = saldo + valor;
