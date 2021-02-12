@@ -11,7 +11,7 @@ public class Conta {
 	private String titular;
 	private int numero;
 	private String agencia;
-	private double saldo;
+	protected double saldo;
 	private Data dataDeAbertura;
 	private static int identificador;
 
@@ -56,6 +56,10 @@ public class Conta {
 		this.dataDeAbertura = dataDeAbertura;
 	}
 	
+	public String getTipo() {
+		return "Conta";
+	}
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -95,5 +99,10 @@ public class Conta {
 		dados += "\nData de abertura: " + this.dataDeAbertura.formatada();
 		
 		return dados;
+	}
+	
+	public void transfere(double valor, Conta conta) {
+		this.saca(valor);
+		conta.deposita(valor);
 	}
 }
