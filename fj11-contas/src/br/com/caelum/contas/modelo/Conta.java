@@ -6,7 +6,7 @@ package br.com.caelum.contas.modelo;
 * @author Nielson Francisco Fernandes Ferreira
 */
 
-public class Conta {
+public abstract class Conta {
 
 	private String titular;
 	private int numero;
@@ -56,9 +56,7 @@ public class Conta {
 		this.dataDeAbertura = dataDeAbertura;
 	}
 	
-	public String getTipo() {
-		return "Conta";
-	}
+	public abstract String getTipo();
 	
 	public int getNumero() {
 		return numero;

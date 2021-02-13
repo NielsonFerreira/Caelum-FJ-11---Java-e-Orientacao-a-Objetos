@@ -1,11 +1,12 @@
 package br.com.caelum.contas.main;
 import br.com.caelum.contas.modelo.Conta;
+import br.com.caelum.contas.modelo.ContaCorrente;
 import br.com.caelum.contas.modelo.Data;
 
 public class TestaConta {
 
 	public static void main(String[] args) {
-		Conta c1 = new Conta();
+		Conta c1 = new ContaCorrente();
 		Data data = new Data(4, 6, 2015);
 		int totalDeContas = Conta.getIdentificador();
 		
