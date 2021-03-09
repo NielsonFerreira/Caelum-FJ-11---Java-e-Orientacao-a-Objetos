@@ -6,7 +6,7 @@ package br.com.caelum.contas.modelo;
 * @author Nielson Francisco Fernandes Ferreira
 */
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
 	private String titular;
 	private int numero;
@@ -122,6 +122,10 @@ public abstract class Conta {
 	public void transfere(double valor, Conta conta) {
 		this.saca(valor);
 		conta.deposita(valor);
+	}
+
+	public int compareTo(Conta outraConta) {
+		return this.titular.compareTo(outraConta.titular);
 	}
 	
 }
